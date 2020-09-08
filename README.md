@@ -26,5 +26,4 @@ This is a word search page project using Vue.js and [Word Crawler API](http://gi
 ### To do
 
 - Finish unit test
-- Not found result text
 - Display words in a chart
