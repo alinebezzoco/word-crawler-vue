@@ -58,12 +58,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
 }
+</style>
 
+<style scoped>
 .search {
   background: #4c8eca;
   margin: 0 auto;
