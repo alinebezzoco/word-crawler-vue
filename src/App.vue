@@ -14,6 +14,8 @@
       Palavras relacionadas a <strong>{{ word }}</strong>
     </h2>
 
+    <p v-if="word && results.length === 0">Não encontrado</p>
+
     <ul>
       <li v-for="result in results" :key="result.related_word">
         {{ result.related_word }}
@@ -39,6 +41,7 @@ export default {
           "https://words-crawler.herokuapp.com/related_words?term=" + this.word
         )
         .then((res) => {
+          console.log("não tem nada ", this.results.length);
           this.results = res.data;
         })
         .catch((err) => {
@@ -100,6 +103,7 @@ body {
   background-color: #0057aa;
   box-shadow: none;
   border: none;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -123,6 +127,12 @@ h2 {
   font-size: 24px;
 }
 
+p {
+  font-size: 16px;
+  text-align: center;
+  color: #676767;
+}
+
 strong {
   color: #ea5300;
 }
@@ -141,9 +151,5 @@ li {
   border-radius: 5px;
   text-align: center;
   color: #676767;
-}
-
-li:first-of-type {
-  display: none;
 }
 </style>
